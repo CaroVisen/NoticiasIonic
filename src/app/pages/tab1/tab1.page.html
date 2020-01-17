@@ -1,0 +1,23 @@
+<ion-header no-border>
+  <ion-toolbar color="dark">
+    <ion-title>
+      Noticias
+    </ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content color="dark">
+  <ion-grid fixed>
+    <ion-row>
+      <ion-col *ngFor="let noticia of noticias" size="12">
+        <ion-card color="light">
+          <ion-card-header>
+            <ion-card-subtitle>{{noticia.source.name}}</ion-card-subtitle>
+            <ion-card-title>{{noticia.title}}</ion-card-title>
+          </ion-card-header>
+        </ion-card>
+      </ion-col>
+    </ion-row>
+  </ion-grid>
+</ion-content>
+
