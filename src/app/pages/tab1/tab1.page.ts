@@ -16,7 +16,7 @@ noticias: Article[] = [];
   ngOnInit(){
     this.noticiasService.getTopHeadlines().subscribe( resp => {
       //this.noticias = resp.articles; //con esto inserta todas las noticias en el objeto y se sobreescriben
-      this.noticias.push( ...resp.articles ); //los puntos son para que inserte todos los articulos en el array
+      this.noticias.push(...resp.articles); //los puntos son para que inserte todos los articulos en el array
     });
   }
 }
