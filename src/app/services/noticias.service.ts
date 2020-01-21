@@ -16,6 +16,8 @@ const headers = new HttpHeaders({
 export class NoticiasService {
 
   headlinesPage = 0;
+  categoriaActual: string;
+  categoriaPage = 0;
 
   constructor(private http: HttpClient) { }
 
@@ -31,7 +33,13 @@ export class NoticiasService {
   }
 
   getTopHeadlinesCategoria(categoria:string){
-    return this.ejecutarQuery<RespuestaTopHeadlines>('/top-headlines?country=us&category='+ categoria);
+    if(this.categoriaActual === categoria){
+      this.categoriaPage ++;
+    }else{
+      this.categoriaPage = 1;
+      this.categoriaActual = categoria;
+    }
+    return this.ejecutarQuery<RespuestaTopHeadlines>('/top-headlines?country=us&category='+ categoria + '&page=' + this.categoriaPage);
     //return this.http.get('https://newsapi.org/v2/top-headlines?country=de&category=business&apiKey=faf1fc405beb49db8f97387a2ab874ff');
   }
 }
