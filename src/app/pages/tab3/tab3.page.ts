@@ -1,5 +1,6 @@
 import { Component } from '@angular/core';
-
+import { DataLocalService } from '../../services/data-local.service';
+import { Article } from '../../interfaces/interfaces';
 @Component({
   selector: 'app-tab3',
   templateUrl: 'tab3.page.html',
@@ -7,6 +8,12 @@ import { Component } from '@angular/core';
 })
 export class Tab3Page {
 
-  constructor() {}
+  // notis: Article[] = [];
+
+  // constructor(private dataLocal: DataLocalService) {
+    
+  //   this.notis = this.dataLocal.noticias;
+  // }
+
 
 }
