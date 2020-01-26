@@ -10,5 +10,5 @@
   <div *ngIf="dataLocalService.noticias.length === 0">
     <ion-item color="dark" slot="center">No hay Favoritos</ion-item>
   </div>
-  <app-noticias [noticias]="dataLocalService.noticias"></app-noticias>
+  <app-noticias [noticias]="dataLocalService.noticias" [enFavoritos]="true"></app-noticias>
 </ion-content>
